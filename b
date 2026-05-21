@@ -11,11 +11,10 @@ body {
     line-height: 1.6;
 }
 
-/* Added margin: 0 auto to actually center the main content */
 .container {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 25px;
     border-radius: 10px;
 }
@@ -37,7 +36,6 @@ p, h2 {
     margin-bottom: 15px;
 }
 
-/* Nav setup using Flexbox for smooth wrapping */
 nav {
     display: flex;
     justify-content: center;
@@ -59,7 +57,7 @@ nav a:hover {
 }
 
 section {
-    margin: 20px 0; /* Removed side margins to let the container handle spacing */
+    margin: 20px 0;
     padding: 20px;
     background-color: #020617;
     border: 1px solid #00ff9c;
@@ -84,7 +82,6 @@ section {
     box-shadow: 0 0 30px #00bfff;
 }
 
-/* Standard List Styling */
 ul {
     list-style-type: none;
     padding: 0 10px;
@@ -95,7 +92,6 @@ ul li::before {
     color: #00bfff;
 }
 
-/* Tag List Styling (Add class="tags" to your ul for skills/tags) */
 ul.tags {
     display: flex;
     justify-content: center;
@@ -105,7 +101,7 @@ ul.tags {
 }
 
 ul.tags li::before {
-    content: ""; /* Removes the >> from tags */
+    content: "";
 }
 
 .tag {
@@ -124,6 +120,10 @@ ul.tags li::before {
     box-shadow: 0 0 10px #00ff9c;
 }
 
+/* =========================
+   FORM
+========================= */
+
 form {
     background-color: #010409;
     padding: 20px;
@@ -131,17 +131,29 @@ form {
     border: 1px solid #00ff9c;
 }
 
-input, textarea {
+/* Inputs جنب بعض */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+input,
+textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     background-color: black;
     color: #00ff9c;
     border: 1px solid #00ff9c;
-    font-family: "Courier New", monospace; /* Ensures form matches theme */
+    font-family: "Courier New", monospace;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: #00bfff;
     box-shadow: 0 0 10px #00bfff;
@@ -156,7 +168,7 @@ button {
     transition: 0.3s;
     font-family: "Courier New", monospace;
     font-weight: bold;
-    width: 100%; /* Makes button full width on mobile */
+    width: 100%;
 }
 
 button:hover {
@@ -198,15 +210,15 @@ i {
 }
 
 /* =========================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================= */
+   RESPONSIVE
+========================================= */
 
-/* Tablet and smaller */
 @media (max-width: 768px) {
+
     .container {
         padding: 15px;
     }
-    
+
     section {
         padding: 15px;
         margin: 15px 0;
@@ -216,10 +228,15 @@ i {
         width: 120px;
         height: 120px;
     }
+
+    /* يخلي الفورم تحت بعض بالموبايل */
+    .form-row {
+        flex-direction: column;
+    }
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
+
     header h1 {
         font-size: 1.5rem;
     }
